@@ -52,7 +52,7 @@ const SignUp = () => {
         try {
             setPasswordError("");
             // Password meets validation criteria, proceed with registration
-            await createUser(email, password);
+            await createUser(email, password, photo, name);
             console.log("Registration successful!");
 
             // Show a success toast message

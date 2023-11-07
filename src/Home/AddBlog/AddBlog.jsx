@@ -100,6 +100,9 @@ const AddBlog = () => {
                         <option value="Food">Food and Cooking</option>
                         <option value="Development">Personal Development</option>
                         <option value="Career">Career Advice</option>
+                        <option value="Fashion">Fashion and Style</option>
+                        <option value="Book">Book Reviews</option>
+                        <option value="Art">Art and Creativity</option>
                         {/* Add more category options here */}
                     </select>
                 </div>

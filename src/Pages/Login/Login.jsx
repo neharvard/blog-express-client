@@ -18,6 +18,8 @@ const Login = () => {
     const navigate = useNavigate();
     console.log('location in the login page', location)
 
+    // Retrieve the user's photo URL from the state parameter
+    // const userPhotoURL = location.state ? location.state.userPhotoURL : null;
 
     // const handleLogin = event => {
     //     event.preventDefault();
@@ -49,6 +51,11 @@ const Login = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get("email");
         const password = form.get("password");
+        const photo = form.get("photo");
+
+        // If userPhotoURL is null, use the default or placeholder URL
+        // const photoURL = userPhotoURL ;
+        console.log('login photo: ', photo);
 
         signIn(email, password)
             .then(result => {
@@ -64,10 +71,13 @@ const Login = () => {
                 toast.error('Login failed. Incorrect email or password.', { autoClose: 3000 });
             });
     }
+
     const handleGoogleLogin = () => {
         signInWithGoogle()
             .then(result => {
                 console.log(result.user);
+               
+
                 // navigate after login
                 navigate(location?.state ? location.state : '/');
             })
@@ -93,6 +103,12 @@ const Login = () => {
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input type="text" required name="photo" placeholder="Photo URL" className="input input-bordered"/>
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -129,8 +145,8 @@ w-3/5 -mr-12 ml-14 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink
                     </div>
                     {/* Toast container */}
                     <ToastContainer position="top-right" autoClose={3000} />
-                    <p className='my-4 text-center'>New to Blog Express 
-                     <Link className='text-orange-600 font-bold' to="/signup"> Sign Up</Link> 
+                    <p className='my-4 text-center'>New to Blog Express
+                        <Link className='text-orange-600 font-bold' to="/signup"> Sign Up</Link>
                     </p>
                 </div>
             </div>

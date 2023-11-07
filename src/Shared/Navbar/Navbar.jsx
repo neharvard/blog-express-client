@@ -1,12 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
-// import { useContext } from "react";
-// import { AuthContext } from "../../../Providers/AuthProvider";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { useContext } from "react";
 import { AuthContext } from "../../Pages/Providers/AuthProvider";
 // import ThemeContext, { useTheme } from "../../../Theme/ThemeContext";
 
-//import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
 
@@ -16,7 +13,9 @@ const Navbar = () => {
     // const { theme, toggleTheme } = useContext(ThemeContext);
 
 
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut} = useContext(AuthContext);
+    console.log('navbar user: ', user);
+   
     const handleLogOut = () => {
         logOut()
             .then()
@@ -28,8 +27,8 @@ const Navbar = () => {
         {/* <li><a href="/#addProduct">Add Product</a></li> */}
         <li><NavLink to="/addBlog">Add Blog</NavLink></li>
         <li><NavLink to="/addProduct">All blogs</NavLink></li>
-        <li><NavLink to="/addProduct">Featured Blogs </NavLink></li>
-        <li><NavLink to='/cart'>Wishlist</NavLink></li>
+        <li><NavLink to="/featuredBlogs">Featured Blogs </NavLink></li>
+        <li><NavLink to='/wishlist'>Wishlist</NavLink></li>
         {/* <li><NavLink to='/login'>Login</NavLink></li> */}
     </>
 
@@ -39,7 +38,7 @@ const Navbar = () => {
             <div className="navbar-start">
                 <div className="flex gap-5">
                     {/* <FaBloggerB></FaBloggerB> */}
-                    <p className="text-3xl ml-8 font-extrabold italic font-serif">
+                    <p className="text-4xl ml-8 font-extrabold italic font-serif">
                         <span className="text-pink-400">B</span>log Express</p>
                 </div>
                 <div className="dropdown">
@@ -74,7 +73,23 @@ const Navbar = () => {
                             <button className="btn">Login</button>
                         </Link>
                 }
-                {/* <button className="btn">Login</button> */}
+                {/* {
+                    user ? ( // If the user is logged in
+                        <>
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src={user.photo} alt="User" />
+                                </div>
+                            </label>
+                            <button onClick={handleLogOut} className="btn">Log Out</button>
+                        </>
+                    ) : (
+                        <Link to="/login">
+                            <button className="btn">Login</button>
+                        </Link>
+                    )} */}
+
+               
                 {/* <Link to='/login'>
                     <button className="btn">Login</button>
                 </Link> */}
