@@ -1,25 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import { useContext } from "react";
 // import { AuthContext } from "../../../Providers/AuthProvider";
 import { FiSun, FiMoon } from "react-icons/fi";
+import { useContext } from "react";
+import { AuthContext } from "../../Pages/Providers/AuthProvider";
 // import ThemeContext, { useTheme } from "../../../Theme/ThemeContext";
 
 //import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
 
-     //const { theme, toggleTheme } = useTheme(); // Use the useTheme hook
+    //const { theme, toggleTheme } = useTheme(); // Use the useTheme hook
     // const { toggleTheme } = useTheme(); // Use the useTheme hook
     // console.log('navbarTheme: ', toggleTheme);
     // const { theme, toggleTheme } = useContext(ThemeContext);
 
-    
-    // const { user, logOut } = useContext(AuthContext);
-    // const handleLogOut = () => {
-    //     logOut()
-    //         .then()
-    //         .catch()
-    // }
+
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
     const navLinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
         {/* <li><NavLink to='/services'>Services</NavLink></li> */}
@@ -62,7 +64,7 @@ const Navbar = () => {
                         <img src='https://i.ibb.co/Q6KWgsc/user.png' />
                     </div>
                 </label>
-                {/* {
+                {
                     user ?
                         <button
                             onClick={handleLogOut}
@@ -71,12 +73,15 @@ const Navbar = () => {
                         <Link to='/login'>
                             <button className="btn">Login</button>
                         </Link>
-                } */}
-                <button className="btn">Login</button>
+                }
+                {/* <button className="btn">Login</button> */}
+                {/* <Link to='/login'>
+                    <button className="btn">Login</button>
+                </Link> */}
 
                 {/* new add */}
                 <button //onClick={toggleTheme} 
-                className="ml-4 btn btn-circle theme-toggle">
+                    className="ml-4 btn btn-circle theme-toggle">
                     {/* {theme === "dark" ? <FiSun /> : <FiMoon />} */}
                     <FiSun />  <FiMoon />
                 </button>
