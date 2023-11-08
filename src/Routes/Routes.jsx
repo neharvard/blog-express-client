@@ -7,6 +7,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import Details from "../Home/RecentBlog/Details";
 import Wishlist from "../Home/Wishlist/Wishlist";
+import UpdateBlog from "../Home/UpdateBlog/UpdateBlog";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,12 @@ const router = createBrowserRouter([
         path: '/wishlist',
         element: <PrivateRoute><Wishlist></Wishlist></PrivateRoute>,
       },
+      {
+        path: '/blog/:id/updateBlog',
+        element: <PrivateRoute><UpdateBlog></UpdateBlog></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/blog/${params.id}`),
+      },
+      
     ]
   },
 ]);

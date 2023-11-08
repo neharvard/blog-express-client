@@ -4,6 +4,8 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import { useHistory } from 'react-router-dom';
+
 
 const SignUp = () => {
 
@@ -16,26 +18,11 @@ const SignUp = () => {
         password: ""
     });
 
-    // const handleSignUp = event => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const name = form.name.value;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     console.log(name, email, password)
 
-
-    //     createUser(email, password)
-    //         .then(result => {
-    //             const user = result.user;
-    //             console.log('created user', user)
-    //         })
-    //         .catch(error => console.log(error))
-
-    // }
     const handleSignUp = async (e) => {
         e.preventDefault();
         const { name, photo, email, password } = formData;
+
 
         // Password validation
         if (password.length < 6) {
@@ -55,6 +42,9 @@ const SignUp = () => {
             await createUser(email, password, photo, name);
             console.log("Registration successful!");
 
+
+
+
             // Show a success toast message
             toast.success('Registration successful!', { autoClose: 3000 });
 
@@ -65,6 +55,9 @@ const SignUp = () => {
                 email: "",
                 password: ""
             });
+            console.log('signUp photo: ', name, photo);
+           
+
         } catch (error) {
             console.error(error);
         }
@@ -124,7 +117,7 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button className="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
                         <p className='my-4 text-center'>Already Have an Account? <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
