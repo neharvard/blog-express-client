@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* <li><NavLink to='/services'>Services</NavLink></li> */}
         {/* <li><a href="/#addProduct">Add Product</a></li> */}
         <li><NavLink to="/addBlog">Add Blog</NavLink></li>
-        <li><NavLink to="/addProduct">All blogs</NavLink></li>
+        <li><NavLink to="/allBlog">All blogs</NavLink></li>
         <li><NavLink to="/featuredBlogs">Featured Blogs </NavLink></li>
         <li><NavLink to='/wishlist'>Wishlist</NavLink></li>
         {/* <li><NavLink to='/login'>Login</NavLink></li> */}
