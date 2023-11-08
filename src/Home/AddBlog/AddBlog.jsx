@@ -1,12 +1,18 @@
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Pages/Providers/AuthProvider';
 
 const AddBlog = () => {
+
+    const { user } = useContext(AuthContext);
+    console.log('AddBlog email: ', user.email);
+
     const [formData, setFormData] = useState({
         title: '',
         photo: '',
         category: '',
+        email: user.email,
         descriptionShort: '',
         descriptionLong: '',
     });
@@ -36,6 +42,7 @@ const AddBlog = () => {
                 setFormData({
                     title: '',
                     photo: '',
+                    email: user.email,
                     category: '',
                     descriptionShort: '',
                     descriptionLong: '',
@@ -49,6 +56,7 @@ const AddBlog = () => {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
+        
     };
 
     return (

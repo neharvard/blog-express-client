@@ -104,12 +104,12 @@ const Login = () => {
                                 </label>
                                 <input type="text" name='email' placeholder="email" className="input input-bordered" />
                             </div>
-                            <div className="form-control">
+                            {/* <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
                                 <input type="text" required name="photo" placeholder="Photo URL" className="input input-bordered"/>
-                            </div>
+                            </div> */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
@@ -123,6 +123,7 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
+                        <span className='text-center'>Or</span>
                         {/* Add a Google login button */}
                         <div className="justify-center mt-4 border rounded-md
 w-3/5 -mr-12 ml-14 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
@@ -145,7 +146,7 @@ w-3/5 -mr-12 ml-14 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink
                     </div>
                     {/* Toast container */}
                     <ToastContainer position="top-right" autoClose={3000} />
-                    <p className='my-4 text-center'>New to Blog Express
+                    <p className='my-7 text-center'>New to Blog Express
                         <Link className='text-orange-600 font-bold' to="/signup"> Sign Up</Link>
                     </p>
                 </div>
