@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
 
-    
+
 
     const { createUser } = useContext(AuthContext);
     const [passwordError, setPasswordError] = useState("");
@@ -45,9 +45,6 @@ const SignUp = () => {
             await createUser(email, password, photo, name);
             console.log("Registration successful!");
 
-
-
-
             // Show a success toast message
             toast.success('Registration successful!', { autoClose: 3000 });
 
@@ -59,12 +56,74 @@ const SignUp = () => {
                 password: ""
             });
             console.log('signUp photo: ', name, photo);
-           
 
         } catch (error) {
             console.error(error);
         }
     }
+
+
+
+
+    //  const handleSignUp = async (e) => {
+    //     e.preventDefault();
+    //     const { name, photo, email, password } = formData;
+
+    //     // Password validation
+    //     if (password.length < 6) {
+    //         setPasswordError("Password must be at least 6 characters long.");
+    //         return;
+    //     } else if (!/[A-Z]/.test(password)) {
+    //         setPasswordError("Password must contain at least one capital letter.");
+    //         return;
+    //     } else if (!/[^A-Za-z0-9]/.test(password)) {
+    //         setPasswordError("Password must contain at least one special character.");
+    //         return;
+    //     }
+
+    //     try {
+    //         setPasswordError("");
+    //         // Password meets validation criteria, proceed with registration
+    //         const user = await createUser(email, password);
+
+    //         // Add user details to the database
+    //         const userData = {
+    //             name: name,
+    //             photo: photo,
+    //             email: email,
+    //             userId: user._id, // Assuming your authentication provider returns a uid
+    //         };
+
+    //         // Send user data to the server
+    //         const response = await fetch('http://localhost:5000/userSignIn', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(userData),
+    //         });
+
+    //         if (response.ok) {
+    //             console.log("Registration successful!");
+    //             // Show a success toast message
+    //             toast.success('Registration successful!', { autoClose: 3000 });
+    //             // Clear the form fields
+    //             setFormData({
+    //                 name: "",
+    //                 photo: "",
+    //                 email: "",
+    //                 password: ""
+    //             });
+    //         } else {
+    //             console.error('Failed to add user to the database.');
+    //         }
+
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
+
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({

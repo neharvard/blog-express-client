@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { FiSun, FiMoon } from "react-icons/fi";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Pages/Providers/AuthProvider";
 // import ThemeContext, { useTheme } from "../../../Theme/ThemeContext";
 
@@ -14,8 +14,27 @@ const Navbar = () => {
 
 
     const { user, logOut } = useContext(AuthContext);
-    console.log('navbar user: ', user);
+    // console.log('navbar user: ', user);
 
+    /// Newly add code which might deletes
+    // const [userDetails, setUserDetails] = useState(null);
+    // useEffect(() => {
+    //     const fetchUserDetails = async () => {
+    //         if (user) {
+    //             try {
+    //                 const response = await fetch(`http://localhost:5000/userSignIn/${user.email}`);
+    //                 const userData = await response.json();
+    //                 console.log('User Data:', userData);
+    //                 setUserDetails(userData);
+    //             } catch (error) {
+    //                 console.error('Error fetching user details:', error);
+    //             }
+    //         }
+    //     };
+
+    //     fetchUserDetails();
+    // }, [user]);
+    
     const handleLogOut = () => {
         logOut()
             .then()
@@ -79,23 +98,23 @@ const Navbar = () => {
                     )
                 }
 
-                {/* {user ? (
-                    <>
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src={user.photoURL || 'https://i.ibb.co/Q6KWgsc/user.png'} alt="User" />
-                            </div>
-                        </label>
-                        <span className="text-base-200 ml-2">{user.displayName}</span>
-                        <button onClick={handleLogOut} className="btn">
-                            Log Out
-                        </button>
-                    </>
-                ) : (
-                    <Link to="/login">
-                        <button className="btn">Login</button>
-                    </Link>
-                )} */}
+                {/* {
+                    userDetails ? (
+                        <>
+                            <span>{userDetails.photo}</span>
+                            <span>{userDetails.name}</span>
+                            <button
+                                onClick={handleLogOut}
+                                className="btn">Log Out</button>
+                        </>
+                    ) : (
+                        <Link to='/login'>
+                            <button className="btn">Login</button>
+                        </Link>
+                    )
+                } */}
+
+                
 
                 {/* new add */}
                 <button //onClick={toggleTheme} 
