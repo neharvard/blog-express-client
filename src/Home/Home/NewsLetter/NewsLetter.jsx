@@ -50,10 +50,6 @@ const NewsLetter = () => {
                         Updates in Our Monthly Newsletter!!</span>
             <form className="card-body w-80">
                 <fieldset className="form-control">
-                    {/* <label className="label">
-                        <span className=" font-semibold ">Stay Connected: Uncover the Latest Insights, Trends, and 
-                        Updates in Our Monthly Newsletter</span>
-                    </label> */}
                     <div className="relative">
                         <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-12" />
                         <button onClick={handleSubscribe} className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
