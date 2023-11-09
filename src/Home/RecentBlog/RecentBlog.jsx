@@ -10,7 +10,7 @@ const RecentBlog = () => {
     const [recentBlogs, setRecentBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/recent-blogs')
+        fetch('https://assignment-11-server-gules.vercel.app/recent-blogs')
             .then((response) => response.json())
             .then((data) => {
                 // Sort blogs by timestamp in descending order (latest first)
@@ -23,7 +23,7 @@ const RecentBlog = () => {
     // Function to add a blog to the wishlist
     const addToWishlist = async (blogId) => {
         try {
-            const response = await fetch(`http://localhost:5000/wishlist/${blogId}`, {
+            const response = await fetch(`https://assignment-11-server-gules.vercel.app/wishlist/${blogId}`, {
                 method: 'POST',
             });
 

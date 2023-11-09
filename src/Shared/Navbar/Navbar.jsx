@@ -22,7 +22,7 @@ const Navbar = () => {
     //     const fetchUserDetails = async () => {
     //         if (user) {
     //             try {
-    //                 const response = await fetch(`http://localhost:5000/userSignIn/${user.email}`);
+    //                 const response = await fetch(`https://assignment-11-server-gules.vercel.app/userSignIn/${user.email}`);
     //                 const userData = await response.json();
     //                 console.log('User Data:', userData);
     //                 setUserDetails(userData);

@@ -6,7 +6,7 @@ const FeatureBlog = () => {
 
     useEffect(() => {
         // Fetch all recent blogs from the server
-        fetch('http://localhost:5000/recent-blogs')
+        fetch('https://assignment-11-server-gules.vercel.app/recent-blogs')
             .then((response) => response.json())
             .then((data) => {
                 // Calculate the word count for each blog's long description

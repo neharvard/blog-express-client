@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: '/blog/:id/updateBlog',
         element: <PrivateRoute><UpdateBlog></UpdateBlog></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/blog/${params.id}`),
+        loader: ({params}) => fetch(`https://assignment-11-server-gules.vercel.app/blog/${params.id}`),
       },
       {
         path: '/allBlog',

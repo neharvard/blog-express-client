@@ -22,7 +22,7 @@ const AddBlog = () => {
 
         // Send data to the server
         try {
-            const response = await fetch('http://localhost:5000/blog', {
+            const response = await fetch('https://assignment-11-server-gules.vercel.app/blog', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
