@@ -57,7 +57,7 @@ const Login = () => {
         // const photoURL = userPhotoURL ;
         console.log('login photo: ', photo);
 
-        signIn(email, password)
+        signIn(email, password, photo)
             .then(result => {
                 console.log("login: ", result.user);
 

@@ -13,9 +13,9 @@ const Navbar = () => {
     // const { theme, toggleTheme } = useContext(ThemeContext);
 
 
-    const { user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     console.log('navbar user: ', user);
-   
+
     const handleLogOut = () => {
         logOut()
             .then()
@@ -64,35 +64,38 @@ const Navbar = () => {
                     </div>
                 </label>
                 {
-                    user ?
-                        <button
-                            onClick={handleLogOut}
-                            className="btn">Log Out</button>
-                        :
+                    user ? (
+                        <>
+                            {/* <span>{user.email}</span> */}
+                            {/* <span>{user.name}</span> */}
+                            <button
+                                onClick={handleLogOut}
+                                className="btn">Log Out</button>
+                        </>
+                    ) : (
                         <Link to='/login'>
                             <button className="btn">Login</button>
                         </Link>
+                    )
                 }
-                {/* {
-                    user ? ( // If the user is logged in
-                        <>
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img src={user.photo} alt="User" />
-                                </div>
-                            </label>
-                            <button onClick={handleLogOut} className="btn">Log Out</button>
-                        </>
-                    ) : (
-                        <Link to="/login">
-                            <button className="btn">Login</button>
-                        </Link>
-                    )} */}
 
-               
-                {/* <Link to='/login'>
-                    <button className="btn">Login</button>
-                </Link> */}
+                {/* {user ? (
+                    <>
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img src={user.photoURL || 'https://i.ibb.co/Q6KWgsc/user.png'} alt="User" />
+                            </div>
+                        </label>
+                        <span className="text-base-200 ml-2">{user.displayName}</span>
+                        <button onClick={handleLogOut} className="btn">
+                            Log Out
+                        </button>
+                    </>
+                ) : (
+                    <Link to="/login">
+                        <button className="btn">Login</button>
+                    </Link>
+                )} */}
 
                 {/* new add */}
                 <button //onClick={toggleTheme} 

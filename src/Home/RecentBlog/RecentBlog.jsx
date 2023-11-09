@@ -48,8 +48,8 @@ const RecentBlog = () => {
 
 
     return (
-        <div className="mt-16 max-w-screen-xl mx-auto px-4 py-5">
-            <h2 className="text-5xl text-center font-bold mb-6">Recent Blogs</h2>
+        <div className="mt-28 max-w-screen-xl mx-auto px-4 py-5">
+            <h2 className="text-5xl text-center font-bold mb-16">Recent Blogs</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
                 {
                     recentBlogs.slice(0, 6).map((blog) => (

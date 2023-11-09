@@ -4,10 +4,13 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 // import { useHistory } from 'react-router-dom';
 
 
 const SignUp = () => {
+
+    
 
     const { createUser } = useContext(AuthContext);
     const [passwordError, setPasswordError] = useState("");
