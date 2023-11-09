@@ -2,7 +2,7 @@
 # Blog Express
 Blog Express is a dynamic and feature-rich blogging platform designed to empower users to share their thoughts, stories, and experiences with the world. The platform offers a seamless and user-friendly experience for both writers and readers.
  
-## Visit the live site ().
+## Visit the live site (https://assignment-11-8e0b5.web.app).
 
 ## Features
 1. **User Authentication:** Secure user authentication powered by Firebase allows users to sign up, log in, and personalize their profiles.
