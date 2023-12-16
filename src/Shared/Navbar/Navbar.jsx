@@ -15,26 +15,7 @@ const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
     // console.log('navbar user: ', user);
-
-    /// Newly add code which might deletes
-    // const [userDetails, setUserDetails] = useState(null);
-    // useEffect(() => {
-    //     const fetchUserDetails = async () => {
-    //         if (user) {
-    //             try {
-    //                 const response = await fetch(`http://localhost:5000/userSignIn/${user.email}`);
-    //                 const userData = await response.json();
-    //                 console.log('User Data:', userData);
-    //                 setUserDetails(userData);
-    //             } catch (error) {
-    //                 console.error('Error fetching user details:', error);
-    //             }
-    //         }
-    //     };
-
-    //     fetchUserDetails();
-    // }, [user]);
-    
+ 
     const handleLogOut = () => {
         logOut()
             .then()
@@ -48,6 +29,7 @@ const Navbar = () => {
         <li><NavLink to="/allBlog">All blogs</NavLink></li>
         <li><NavLink to="/featuredBlogs">Featured Blogs </NavLink></li>
         <li><NavLink to='/wishlist'>Wishlist</NavLink></li>
+        <li><NavLink to='/contact'>Contact</NavLink></li>
         {/* <li><NavLink to='/login'>Login</NavLink></li> */}
     </>
 

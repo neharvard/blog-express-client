@@ -11,6 +11,7 @@ import UpdateBlog from "../Home/UpdateBlog/UpdateBlog";
 import AllBlog from "../Home/AllBlog/AllBlog";
 import FeatureBlog from "../Home/FeatureBlog/FeatureBlog";
 import CategoryData from "../Home/Category/CategoryData";
+import Contact from "../Home/Contact/Contact";
 
 
 const router = createBrowserRouter([
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: '/blogs-by-category/:category',
         element: <CategoryData></CategoryData>,
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>,
       },
       
     ]

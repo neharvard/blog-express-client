@@ -12,7 +12,7 @@ const Category = () => {
         <div className='mt-24 mt-28 max-w-screen-xl mx-auto px-4 py-5'>
             {/* <h1>This is Category</h1> */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 w-[1200px]  mb-24">
-                <div className="hero h-[260px] relative cursor-pointer overflow-hidden" style={{ backgroundImage: 'url(https://i.ibb.co/zmrs4kC/technology.jpg)'}} onClick={() => handleClick('Technology')} >
+                <div className="hero h-[200px] relative cursor-pointer overflow-hidden" style={{ backgroundImage: 'url(https://i.ibb.co/zmrs4kC/technology.jpg)'}} onClick={() => handleClick('Technology')} >
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
@@ -44,7 +44,7 @@ const Category = () => {
                         </div>
                     </div>
                 </div>
-                <div className="hero h-[260px] relative cursor-pointer overflow-hidden" style={{ backgroundImage: 'url(https://i.ibb.co/pj5L6KH/smily-face.jpg)' }} onClick={() => handleClick('Health')}>
+                <div className="hero h-[200px] relative cursor-pointer overflow-hidden" style={{ backgroundImage: 'url(https://i.ibb.co/pj5L6KH/smily-face.jpg)' }} onClick={() => handleClick('Health')}>
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
