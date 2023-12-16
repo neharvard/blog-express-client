@@ -10,7 +10,7 @@ const Wishlist = () => {
 
     console.log('wishlist email: ', user.email);
 
-    const url = `https://assignment-11-server-gules.vercel.app/wishlist-blogs?email=${user.email}`;
+    const url = `http://localhost:5000/wishlist-blogs?email=${user.email}`;
 
     useEffect(() => {
         // Fetch wishlist blogs from your backend
@@ -25,7 +25,7 @@ const Wishlist = () => {
     // Function to remove a blog from the wishlist
     const removeFromWishlist = async (blogId) => {
         try {
-            const response = await fetch(`https://assignment-11-server-gules.vercel.app/remove-from-wishlist/${blogId}`, {
+            const response = await fetch(`http://localhost:5000/remove-from-wishlist/${blogId}`, {
                 method: 'POST',
             });
 

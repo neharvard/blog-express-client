@@ -15,13 +15,13 @@ const Details = () => {
     console.log('detail pohoto: ', name, photo);
 
     useEffect(() => {
-        fetch(`https://assignment-11-server-gules.vercel.app/blog/${_id}`)
+        fetch(`http://localhost:5000/blog/${_id}`)
             .then((response) => response.json())
             .then((data) => {
                 setBlogDetails(data);
             });
         // Fetch comments for the specific blog
-        fetch(`https://assignment-11-server-gules.vercel.app/comments/${_id}`)
+        fetch(`http://localhost:5000/comments/${_id}`)
             .then((response) => response.json())
             .then((data) => {
                 setComments(data);
@@ -33,7 +33,7 @@ const Details = () => {
     const handleSubmitComment = () => {
         if (!isBlogOwner) {
             // Check if the user is not the blog owner before submitting the comment
-            fetch(`https://assignment-11-server-gules.vercel.app/comment/${_id}`, {
+            fetch(`http://localhost:5000/comment/${_id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const Details = () => {
                 .then((data) => {
                     if (data.success) {
                         // Refresh the comments after successfully adding a new comment
-                        fetch(`https://assignment-11-server-gules.vercel.app/comments/${_id}`)
+                        fetch(`http://localhost:5000/comments/${_id}`)
                             .then((response) => response.json())
                             .then((data) => {
                                 setComments(data);

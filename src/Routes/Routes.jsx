@@ -10,6 +10,7 @@ import Wishlist from "../Home/Wishlist/Wishlist";
 import UpdateBlog from "../Home/UpdateBlog/UpdateBlog";
 import AllBlog from "../Home/AllBlog/AllBlog";
 import FeatureBlog from "../Home/FeatureBlog/FeatureBlog";
+import CategoryData from "../Home/Category/CategoryData";
 
 
 const router = createBrowserRouter([
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: '/blog/:id/updateBlog',
         element: <PrivateRoute><UpdateBlog></UpdateBlog></PrivateRoute>,
-        loader: ({params}) => fetch(`https://assignment-11-server-gules.vercel.app/blog/${params.id}`),
+        loader: ({params}) => fetch(`http://localhost:5000/blog/${params.id}`),
       },
       {
         path: '/allBlog',
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: '/featuredBlogs',
         element: <FeatureBlog></FeatureBlog>,
+      },
+      {
+        path: '/blogs-by-category/:category',
+        element: <CategoryData></CategoryData>,
       },
       
     ]

@@ -95,7 +95,7 @@ const SignUp = () => {
     //         };
 
     //         // Send user data to the server
-    //         const response = await fetch('https://assignment-11-server-gules.vercel.app/userSignIn', {
+    //         const response = await fetch('http://localhost:5000/userSignIn', {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json',
